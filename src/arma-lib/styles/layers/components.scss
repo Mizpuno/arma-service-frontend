@@ -1,0 +1,59 @@
+@use "../shares/index" as *;
+
+@layer components {
+    @each $color in $colors {
+        @each $variant in $btn-variant {
+            .btn-#{$color}.btn-#{$variant} {
+                padding: .5rem 1rem;
+                width: fit-content;
+                height: fit-content;
+
+                border-width: 2px;
+                border-radius: 0.375rem;
+                color: var(--#{$color}-color);
+                
+                transition: all 0.3s;
+                cursor: pointer;
+                @include btn-variant-mapper($variant, $color);
+            }
+
+            @each $size in $btn-size {
+            .btn-#{$color}.btn-#{$variant}-#{$size} {
+                    @extend .btn-#{$color};
+                    @extend .btn-#{$variant};
+                    @include btn-size-mapper($size);
+                }
+            }
+        }
+    }
+}
+
+.input-group.invalid-control {
+    border-right: 5px solid var(--danger-color); 
+}
+
+.input-group {
+    background: white;
+    border: 1px solid transparent;
+    border-left: 0px solid transparent;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    transition: all 0.2s;
+
+    // When any child (like input) is focused
+    &:focus-within {
+        border: 1px solid transparent;
+        border-left: 5px solid var(--primary-color);
+        transition: all 0.2s
+    }
+
+    input {
+        outline: none;
+        font-weight: 300;
+        font-size: 14px;
+        color: #808080;
+    }
+
+    input::placeholder {
+        color: #808080;
+    }
+}

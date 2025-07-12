@@ -1,0 +1,13 @@
+@use '../shares/index' as *;
+
+@layer utilities {
+  @each $color in $colors {
+    .bg-#{$color}, .hover\:bg-#{$color}:hover {
+        background-color: var(--#{$color}-color); 
+      }
+
+      .border-#{$color}, .hover\:border-#{$color}:hover {
+        border-color: var(--#{$color}-color);
+      }
+  }
+}

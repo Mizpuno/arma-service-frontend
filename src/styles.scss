@@ -1,2 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-@import "tailwindcss";
+
+@use "tailwindcss";
+
+/* 
+  Placement for import styles from arma-lib
+  ---
+  create by: Nititorn T. 
+  version: Beta 0.0.1a
+ */
+@use "./arma-lib/styles/common.scss";
+
+/* Import about layer */
+@use "./arma-lib/styles/layers/base.scss";
+@use "./arma-lib/styles/layers/components.scss";
+@use "./arma-lib/styles/layers/utilities.scss";
+
+@theme {
+    --primary-color: #F05454;
+    --secondary-color: #30475E;
+    --success-color: #39D491;
+    --danger-color: #F05454;
+    --warning-color: #FFB845;
+    --base-color: #121212;
+
+    --primary-color-rgb: 240 84 84;
+    --secondary-color-rgb: 48 71 94;
+    --success-color-rgb: 57 212 145;
+    --danger-color-rgb: 240 84 84;
+    --warning-color-rgb: 255 184 69;
+    --base-color-rgb: 18 18 18;
+}

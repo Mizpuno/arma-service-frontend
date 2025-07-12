@@ -1,0 +1,8 @@
+@use 'sass:list';
+
+$colors: primary, secondary, success, danger, warning, base;
+
+$btn-variant: solid, outline, light, dark;  
+$btn-size: sm, md, lg;
+
+// String join properties as text for sources
