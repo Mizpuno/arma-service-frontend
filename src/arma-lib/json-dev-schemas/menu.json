@@ -1,0 +1,156 @@
+{
+    "menu":  {
+        "content": [
+            {
+                "id": 1,
+                "name": "หน้าแรก",
+                "path": "/home",
+                "type": "web",
+                "defaultFlag": true,
+                "level": 1,
+                "seq": 1,
+                "subMenu": []
+            },
+            {
+                "id": 2,
+                "name": "เกี่ยวกับ",
+                "path": "/about",
+                "type": "web",
+                "defaultFlag": false,
+                "level": 1,
+                "seq": 2,
+                "subMenu": []
+            },
+            {
+                "id": 3,
+                "name": "บริการ & ผลิตภัณฑ์",
+                "path": "/services",
+                "type": "web",
+                "defaultFlag": false,
+                "level": 1,
+                "seq": 3,
+                "subMenu": []
+            },
+            {
+                "id": 4,
+                "name": "ระบบภายในองค์กร",
+                "path": "/org",
+                "type": "web",
+                "defaultFlag": false,
+                "level": 1,
+                "seq": 4,
+                "subMenu": [
+                    {
+                        "id": 6,
+                        "name": "การจัดการข้อมูล",
+                        "path": "/data-management",
+                        "type": "title",
+                        "defaultFlag": false,
+                        "level": 2,
+                        "seq": 1,
+                        "subMenu": [
+                            {
+                                "id": 7,   
+                                "name": "ข้อมูลผู้ผลิต/ต้นแหล่ง",
+                                "path": "/producer",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 1,
+                                "subMenu": []
+                            },
+                            {
+                                "id": 8,
+                                "name": "ข้อมูลลูกค้า",
+                                "path": "/customer",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 2,
+                                "subMenu": []
+                            },
+                            {
+                                "id": 9,
+                                "name": "ข้อมูลสินค้า/ผลิตภัณฑ์",
+                                "path": "/product",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 3,
+                                "subMenu": []
+                            },
+                            {
+                                "id": 10,
+                                "name": "ข้อมูลหน่วยและการแปลง",
+                                "path": "/unit-conversion",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 4,
+                                "subMenu": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 11,
+                        "name": "การติดตามรายการ",
+                        "path": "/tracking-order",
+                        "type": "title",
+                        "defaultFlag": false,
+                        "level": 2,
+                        "seq": 2,
+                        "subMenu": [
+                            {
+                                "id": 12,
+                                "name": "รายการสั่งของเข้า",
+                                "path": "/purchases",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 1,
+                                "subMenu": []
+                            },
+                            {
+                                "id": 13,
+                                "name": "รายการส่งสินค้า",
+                                "path": "/deliveries",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 2,
+                                "subMenu": []
+                            }
+                        ]
+                    },
+                    {
+                        "id": 14,
+                        "name": "รายงานวิเคราะห์",
+                        "path": "/report-analysis",
+                        "type": "title",
+                        "defaultFlag": false,
+                        "level": 2,
+                        "seq": 3,
+                        "subMenu": [
+                            {
+                                "id": 15,
+                                "name": "วิเคราะห์ภาพรวม",
+                                "path": "/overview",
+                                "type": "web",
+                                "defaultFlag": false,
+                                "level": 3,
+                                "seq": 1,
+                                "subMenu": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "response": {
+            "code": 200,
+            "text": "SUCCESS",
+            "message": "query successful",
+            "description": null
+        }
+    }
+}
