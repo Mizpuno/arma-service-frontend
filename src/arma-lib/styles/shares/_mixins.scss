@@ -1,0 +1,54 @@
+@use './variables' as *;
+
+@mixin btn-variant-mapper($variant, $color) {
+    @if $variant == solid {
+        background-color: var(--#{$color}-color);
+        color: white;
+
+        &:hover, &:active {
+            background-color: color-mix(in srgb, var(--#{$color}-color) 90%, black 20%);
+            transition: all 0.3s;
+        }
+    }
+
+    @if $variant == outline {
+        background-color: white;
+        border-color:var(--#{$color}-color);
+        
+        &:hover, &:active {
+            background-color: var(--#{$color}-color);
+            color: white;
+            transition: all 0.3s;
+        }
+    }
+
+    @if $variant == light {
+        background-color: white;
+        border: white;
+        color: var(--#{$color}-color);
+        box-shadow: 0 5px 15px rgb(var(--#{$color}-color-rgb) / 10%);
+
+        &:hover, &:active {
+            background-color: var(--#{$color}-color);
+            color: white;
+            transition: all 0.3s;
+        }
+    }
+
+    @if $variant == dark {
+        background-color: var(--base-color);
+        border: var(--base-color);
+        color: var(--#{$color}-color);
+
+        &:hover, &:active {
+            background-color: color-mix(in srgb, var(--base-color) 80%, white 20%);
+            transition: all 0.3s;
+        }
+    }
+}
+
+@mixin btn-size-mapper($size) {
+    @if $size == sm {padding: .25rem .5rem !important;}
+    @if $size == md {padding: .5rem 1rem !important;}
+    @if $size == lg {padding: 1rem 1.5rem !important;}
+}
