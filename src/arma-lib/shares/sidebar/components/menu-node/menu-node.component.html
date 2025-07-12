@@ -1,0 +1,18 @@
+<ng-container *ngIf="_in_menu as menu">
+    <div [id]="'node-' + menu.id"
+         [ngClass]="{'pt-5': menu.type === 'title'}">
+        <p [ngClass]="{
+                'font-light cursor-pointer menu-item': menu.type !== 'title',
+                'menu-item-f-hover': _in_menuAction?.subMenuAct?.id === menu.id
+            }"
+           class="text-right"
+           (click)="menu.type !== 'title' && onMenuClick(menu)">{{menu.name}}</p>
+
+        <ng-container *ngIf="menu.subMenu && menu.subMenu.length > 0">
+            <menu-node *ngFor="let each of _in_menu.subMenu"
+                       [_in_menu]="each"
+                       [_in_menuAction]="_in_menuAction"
+                       (_out_subMenuAct)="onGetSubMenuAct($event)"/>
+        </ng-container>  
+    </div>
+</ng-container>

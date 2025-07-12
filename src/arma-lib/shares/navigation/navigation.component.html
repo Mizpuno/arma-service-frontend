@@ -1,0 +1,25 @@
+<div class="relative z-20 w-full bg-white shadow-[0_5px_15px_rgba(0,0,0,0.05)] ">
+    <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div id="logo" class="col-span-1 lg:col-span-2 text-left">
+            <div class="flex items-center gap-2 content-center px-5 h-full">
+                <h6 class="text-[32px] text-red-500 font-bold inline">ARMA</h6>
+                <h3 class="text-[20px] pt-1 inline">Services</h3>
+            </div>
+        </div>
+        <div id="menus" class="col-span-1 lg:col-span-8">
+            <div class="flex justify-center items-center gap-5">
+                <div [id]="menu.id"
+                     *ngFor="let menu of menus"
+                     [ngClass]="{'menu-item-f-hover': menuAction?.menuAct?.id === menu.id}"
+                     class="p-4 text-center menu-item w-fit"
+                     (click)="onClickMenu(menu)">
+                    <p class="cursor-pointer">{{menu.name}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 lg:col-span-2 text-right">
+            <div class="grid grid-cols-1 content-center">
+            </div>
+        </div>
+    </div>
+</div>

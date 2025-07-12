@@ -1,0 +1,10 @@
+.menu-item {
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.menu-item:hover, .menu-item-f-hover {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+

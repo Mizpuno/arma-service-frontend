@@ -1,0 +1,7 @@
+.menu-item {
+    transition: all 0.2ms;
+}
+
+.menu-item:hover, .menu-item-f-hover {
+    color: var(--primary-color);
+}

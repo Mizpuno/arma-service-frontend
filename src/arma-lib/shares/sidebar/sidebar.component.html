@@ -1,0 +1,15 @@
+<div *ngIf="_in_menuAction?.sidebarActive"
+     class="absolute z-10 bg-white top-0 h-full shadow-[0_5px_15px_rgba(0,0,0,0.05)]">
+    <div class="pt-30 px-5 min-w-2xs flex flex-col justify-between h-full">
+        <div id="node">
+            <ng-container *ngFor="let menu of _in_menuAction?.menuAct?.subMenu">
+                <menu-node [_in_menu]="menu"
+                           [_in_menuAction]="_in_menuAction"
+                           (_out_subMenuAct)="onGetSubMenuAct($event)"/>
+            </ng-container>
+        </div>
+        <div>
+            footer
+        </div>
+    </div>
+</div>  
