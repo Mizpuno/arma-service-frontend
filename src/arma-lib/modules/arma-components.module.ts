@@ -7,11 +7,13 @@ import { AsButtonComponent } from "../components/as-button.component";
 import { AsInputComponent } from "../components/as-input.component";
 import { ArmaCommonsModule } from "./arma-commons.module";
 import { ArmaFormsModule } from "./arma-forms.module";
+import { AsCardAComponent } from "../components/as-card-a.component";
 
 const SHARE_COMPONENTS = [
     AsSlideWrapperComponent,
     AsButtonComponent,
     AsInputComponent,
+    AsCardAComponent,
 ]
 
 const IMPORT_COMPONENTS = [

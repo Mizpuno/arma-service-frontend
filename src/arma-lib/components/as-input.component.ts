@@ -58,8 +58,7 @@ import { NgControl } from "@angular/forms";
         </div>
         
     `,
-    styles: `
-    `,
+    styles: ``,
     standalone: false,
     
 })
