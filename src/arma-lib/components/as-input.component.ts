@@ -103,7 +103,6 @@ export class AsInputComponent implements OnInit, OnChanges {
 
     ngOnInit(): void {
         this.title = this.label || this.ngControl?.name as string || this.ngControl?.path?.[0] || null;
-        console.log(this.title)
         if (this.reqShowBadge == undefined) {
             this.reqShowBadge = false;
             this.reqShowBadgeText = false;
@@ -118,16 +117,6 @@ export class AsInputComponent implements OnInit, OnChanges {
             case 'large': this.sizeStage = 'lg'; break;
             default: this.sizeStage = 'md'
         }
-    }
-
-    abbrMapper(value: string, mapper: Object, output: string) {
-        for(const [k, v] of Object.entries(mapper)) {
-            try {
-
-            } catch (eror) {
-            }
-        }
-        return output;
     }
 
     writeValue(value: any) {
@@ -176,12 +165,5 @@ export class AsInputComponent implements OnInit, OnChanges {
 
         return errorString
     }
-
-    // get validateStatus() {
-    //     if (this.ngControl) {
-
-    //     }
-    // }
-    
 }
 

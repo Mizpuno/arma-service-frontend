@@ -1,0 +1,58 @@
+<as-card-a>
+      <ng-template #header>
+            hello world
+      </ng-template>
+      <ng-template #content>
+            oh my gosh
+      </ng-template>
+</as-card-a>
+
+<div class="grid grid-cols-3 my-5">
+      <div class="col-span-1">
+            <as-dropdown [options]="getSampleDropdown"
+                         [showSearchBox]="true"
+                         [additionSearchOn]="'none'"></as-dropdown>
+      </div>
+      <div class="col-span-1">
+            <as-dropdown [options]="getSampleDropdownGroup"
+                         [showSearchBox]="true"
+                         [additionSearchOn]="'all'"></as-dropdown>
+      </div>
+</div>
+
+
+<as-button title="Bomb!"
+           variant="outline"
+           description="this is a bomb button. becareful!!"
+           rIcon="fa-solid fa-bomb"></as-button>
+
+<as-button title="Button"
+           color="primary"
+           rIcon="fa-solid fa-bomb"/>
+
+<form [formGroup]="sampleForm"
+      (ngSubmit)="onFormSubmit()"
+      class="space-4">
+      <as-input formControlName="tel"/>
+      <as-input formControlName="name"
+                [required]="true"
+                [reqShowBadge]="true"/>
+      <as-input formControlName="email"
+                [required]="true"
+                [reqShowBadge]="true"
+                type="email"/>
+      <as-input formControlName="password"
+                [required]="true"
+                [reqShowBadge]="true"
+                reqMsg="โปรดระบุ pattern รหัสให้ถูกต้อง
+                - l;ylfu8iy[ ]
+                ข ฟหกฟห่กวฟ"
+                type="password"/>
+      <as-input formControlName="confirmPassword"
+                [required]="true"
+                [reqShowBadge]="true"
+                type="password"/>
+    <as-button title="submit"
+               type="submit"></as-button>
+</form>
+

@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { CommonResponse } from "../../interfaces/common-response.interface";
 import { MenuInterface } from "../../interfaces/menu.interface";
-import { WebProtocolService } from "../../services/web-protocol.component";
+import { WebProtocolService } from "../../services/web-protocol.service";
 import { Observable } from "rxjs";
 
 @Injectable({

@@ -1,31 +1,3 @@
 <app-navigation (_out_menuAction)="onGetMenus($event)"/>
+ <router-outlet></router-outlet>
 <app-sidebar [_in_menuAction]="menuAction"/>
-
-
-<as-card-a></as-card-a>
-
-<form [formGroup]="sampleForm"
-      (ngSubmit)="onFormSubmit()"
-      class="space-4">
-      <as-input formControlName="tel"/>
-      <as-input formControlName="name"
-                [required]="true"
-                [reqShowBadge]="true"/>
-      <as-input formControlName="email"
-                [required]="true"
-                [reqShowBadge]="true"
-                type="email"/>
-      <as-input formControlName="password"
-                [required]="true"
-                [reqShowBadge]="true"
-                reqMsg="โปรดระบุ pattern รหัสให้ถูกต้อง
-                - l;ylfu8iy[ ]
-                ข ฟหกฟห่กวฟ"
-                type="password"/>
-      <as-input formControlName="confirmPassword"
-                [required]="true"
-                [reqShowBadge]="true"
-                type="password"/>
-    <as-button title="submit"
-               type="submit"></as-button>
-</form>

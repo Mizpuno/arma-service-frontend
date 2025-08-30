@@ -9,7 +9,7 @@ import { ArmaComponentsModule } from '../arma-lib/modules/arma-components.module
 import { ArmaCommonsModule } from '../arma-lib/modules/arma-commons.module';
 import { ArmaFormsModule } from '../arma-lib/modules/arma-forms.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,9 @@ import { provideAnimations } from '@angular/platform-browser/animations';
   ],
   imports: [
     AppRoutingModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
 
     // Importing the arma-lib modules.
     ArmaSharesModule,

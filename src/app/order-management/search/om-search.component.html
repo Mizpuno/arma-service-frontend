@@ -1,0 +1,60 @@
+<div class="bg-white">
+    <div class="flex justify-center">
+        <div class="size-[80%] py-10">
+            <as-page-title title="จัดการรายการสั่งของเข้า"
+                           subTitle="จัดการรายการสั่งของเข้า ในรูปแบบรายเดือน ตั้งแต่เพิ่มแก้ไขไปจนถึงดูรายละเอียดรายเดือน"/>
+            <div class="flex justify-center my-10">
+                <form>
+                    <div class="flex items-center gap-2 flex-wrap justify-center">
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <as-input label="รอบเดือน"
+                                      placeholder="กรุณาระบุรอบเดือนที่สั่งของเข้า"/>
+                            <as-input label="รอบปี"
+                                      placeholder="กรุณาระบุรอบปีที่สั่งของเข้า"/>
+                        </div>
+
+                        <div class="flex gap-1 justify-center">
+                            <as-button title="ค้นหา"
+                                       size="extra"/>
+                            <as-button title="สร้าง"
+                                       size="extra"
+                                       color="success"/>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>  
+
+<div class="flex justify-center">
+    <div class="size-[80%] py-10">
+        <div class="grid grid-cols-3 gap-2">
+            <as-card-a *ngFor="let order of searchOrderList"
+                       title="รายการสั่งสินค้า"
+                       subTitle="ประจำเดือน สิงหาคม 2568"
+                       widthType="full"
+                       class="col-span-1">
+                <div *ngFor="let item of order.totalItems; let i = index"
+                     class="grid grid-cols-8">
+                    <p class="col-span-5 text-left font-light">
+                        {{DEFAULT_SEARCH_ORDER_TEXTS[i].name}}
+                    </p>
+                    <div class="col-span-2 text-left font-light">
+                        {{i === order.totalItems.length-1 ? (item | number:'1.2-2') : item}}
+                    </div>
+                    <div class="col-span-1 text-left font-light">
+                        {{DEFAULT_SEARCH_ORDER_TEXTS[i].unit}}
+                    </div>
+                </div>
+                <p class="pt-3">
+                    อัพเดทล่าสุดเมื่อ {{order.updateDate}}
+                </p>
+            </as-card-a>
+        </div>
+        <as-pagination></as-pagination>
+        
+    </div>
+</div>
