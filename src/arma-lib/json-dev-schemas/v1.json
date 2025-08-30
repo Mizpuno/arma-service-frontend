@@ -1,4 +1,43 @@
 {
+    "login": {
+        "content": {
+            "token": "axask12non12jj6547n46ln756l23kb4k2lnl34645jbla",
+            "user": {
+                "_local": {
+                    "username": "nititorn.tunkim",
+                    "userId": "27530"
+                },
+                "information": {
+                    "name": "นิติธร",
+                    "surename": "ตันกิม",
+                    "email": "sample@gmail.com",
+                    "tels": [
+                        {
+                            "name": "เบอร์ติดต่อหลัก",
+                            "no": "0819999999"
+                        },
+                        {
+                            "name": "เบอร์สำรอง 1",
+                            "no": "0981111111"
+                        }
+                    ]
+                },
+                "configuration": {
+                    "others": {
+                        "dropdown": {
+                            "headerSearchAffect": "not-show"
+                        }
+                    }
+                }
+            }
+        },
+        "response": {
+            "code": 200,
+            "text": "SUCCESS",
+            "message": "query successful",
+            "description": null
+        }
+    },
     "menu":  {
         "content": [
             {
