@@ -3,11 +3,22 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 @Component({
     selector: 'as-button',
     template: `
-        <button class='btn-{{color}} btn-{{variant}}-{{sizeStage}}'>
-            <div class="flex flex-col {{buildInnerClasses}}">
-                <h3 class="">{{title}}</h3>  
-                <p class="font-thin">{{description}}</p>
+        <button [ngClass]="buttonClasses">
+            <div class="flex gap-3 items-center">
+                <ng-container *ngIf="lIcon">
+                    <i class="{{lIcon}}"></i>
+                </ng-container>
+                <div class="flex flex-col {{buildInnerClasses}}">
+                    <ng-container>
+                        <h3 class="">{{title}}</h3>  
+                        <p class="font-thin">{{description}}</p>
+                    </ng-container>
+                </div>
+                <ng-container *ngIf="rIcon">
+                    <i class="{{rIcon}}"></i>
+                </ng-container>
             </div>
+            
         </button>
     `,
     styles: ``,
@@ -16,7 +27,7 @@ import { Component, Input, OnChanges, SimpleChanges } from "@angular/core";
 
 export class AsButtonComponent implements OnChanges {
     // Adjustments: Button text.
-    @Input() public title: string = 'Button';
+    @Input() public title: string = 'Sample Button';
     @Input() public description: string | null = null;
 
     // Adjustments: Inner button structure.
@@ -25,13 +36,17 @@ export class AsButtonComponent implements OnChanges {
     // Adjustments: Button properties.
     @Input() public variant: 'solid' | 'outline' | 'light' | 'dark' = 'solid';
     @Input() public color: 'primary' | 'secondary' | 'danger' | 'warning' | 'success' | 'base' = 'secondary'
-    @Input() public size: 'small' | 'medium' | 'large' = 'medium'
+    @Input() public size: 'small' | 'medium' | 'large' | 'extra' | 'full' = 'medium'
+    
+    @Input() public styleClass: string | null = null;
     @Input() public innerClass: string | null = null;
 
+    @Input() public maxBorder: boolean = false;
+    @Input() public maxWidth: boolean = false;
+
     // Adjustments: Button icons.
-    // **Unsupport for now ** current design doesn't have button with icon.
-    @Input() public icon: string | null = null;
-    @Input() public iconPos: string | null = null;
+    @Input() public lIcon: string | null = null;
+    @Input() public rIcon: string | null = null;
 
     public sizeStage: string | null = null;
     public alignmentStage: string | null = null;
@@ -44,6 +59,8 @@ export class AsButtonComponent implements OnChanges {
         switch(chgSize) {
             case 'small': this.sizeStage = 'sm'; break;
             case 'large': this.sizeStage = 'lg'; break;
+            case 'extra': this.sizeStage = 'xl'; break;
+            case 'full': this.sizeStage = 'full'; break;
             default: this.sizeStage = 'md'
         }
 
@@ -53,6 +70,16 @@ export class AsButtonComponent implements OnChanges {
 
     public get buildInnerClasses() {
         return this.alignmentStage?.concat(" ").concat(this.innerClass ?? '');
+    }
+
+    public get buttonClasses() {
+        return {
+            [this.styleClass ?? '']: true,
+            ['btn-' + this.color]: true,
+            ['btn-' + this.variant + '-' + this.sizeStage]: this.sizeStage!!,
+            ['w-full']: this.maxWidth,
+            ['rounded-full']: this.maxBorder,
+        };
     }
 
 }
