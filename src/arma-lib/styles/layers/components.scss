@@ -18,7 +18,7 @@
             }
 
             @each $size in $btn-size {
-            .btn-#{$color}.btn-#{$variant}-#{$size} {
+                .btn-#{$color}.btn-#{$variant}-#{$size} {
                     @extend .btn-#{$color};
                     @extend .btn-#{$variant};
                     @include btn-size-mapper($size);
